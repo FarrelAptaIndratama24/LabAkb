@@ -18,7 +18,7 @@ export default function Index() {
           gap: 24,
         }}
       >
-        {/* Segitiga */}
+        {/* Segitiga dengan Border */}
         <View
           style={{
             width: 0,
@@ -28,7 +28,7 @@ export default function Index() {
             borderBottomWidth: 80,
             borderLeftColor: "transparent",
             borderRightColor: "transparent",
-            borderBottomColor: "#e17055",
+            borderBottomColor: "#333333",
           }}
         />
 
@@ -37,7 +37,9 @@ export default function Index() {
           style={{
             width: 180,
             height: 70,
-            backgroundColor: "#00b894",
+            backgroundColor: "transparent",
+            borderWidth: 2,
+            borderColor: "#333333",
             borderRadius: 35, // Setengah dari height untuk bentuk pill sempurna
             justifyContent: "center",
             alignItems: "center",
@@ -45,7 +47,7 @@ export default function Index() {
         >
           <Text
             style={{
-              color: "white",
+              color: "#333333",
               fontSize: 10,
               textAlign: "center",
               marginBottom: 3,
@@ -56,7 +58,7 @@ export default function Index() {
           </Text>
           <Text
             style={{
-              color: "white",
+              color: "#333333",
               fontWeight: "bold",
               fontSize: 16,
               letterSpacing: 1,
@@ -71,35 +73,38 @@ export default function Index() {
         {/* Persegi Panjang dengan Label dan Nama */}
         <View
           style={{
-            width: 380,
-            height: 100,
-            backgroundColor: "#0984e3",
-            borderRadius: 10,
+            width: 400,
+            height: 120,
+            backgroundColor: "transparent",
+            borderWidth: 2,
+            borderColor: "#333333",
+            borderRadius: 8,
             justifyContent: "center",
             alignItems: "center",
-            paddingHorizontal: 20,
+            paddingHorizontal: 24,
+            paddingVertical: 16,
           }}
         >
           <Text
             style={{
-              color: "white",
-              fontSize: 12,
+              color: "#333333",
+              fontSize: 14,
               textAlign: "center",
-              marginBottom: 5,
-              fontWeight: "500",
+              marginBottom: 8,
+              fontWeight: "600",
             }}
           >
             Nama
           </Text>
           <Text
             style={{
-              color: "white",
+              color: "#333333",
               fontWeight: "bold",
-              fontSize: 18,
+              fontSize: 20,
               textAlign: "center",
-              lineHeight: 22,
+              lineHeight: 24,
             }}
-            numberOfLines={1}
+            numberOfLines={2}
             adjustsFontSizeToFit
           >
             MUH. FARREL APTA INDRATAMA
