@@ -6,16 +6,16 @@ export default function Index() {
       style={{
         flex: 1,
         justifyContent: "center",
-        alignItems: "center", // tengah secara horizontal
+        alignItems: "center",
         backgroundColor: "#f5f6fa",
       }}
     >
       <View
         style={{
-          flexDirection: "row", // objek berjejer horizontal
+          flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-          gap: 24, // jarak antar objek (gunakan margin jika gap tidak didukung)
+          gap: 24,
         }}
       >
         {/* Segitiga */}
@@ -29,11 +29,10 @@ export default function Index() {
             borderLeftColor: "transparent",
             borderRightColor: "transparent",
             borderBottomColor: "#e17055",
-            marginRight: 24,
           }}
         />
 
-        {/* Tabung */}
+        {/* Pill (Tabung) dengan ID Siswa */}
         <View
           style={{
             width: 180,
@@ -42,14 +41,13 @@ export default function Index() {
             borderRadius: 35,
             justifyContent: "center",
             alignItems: "center",
-            marginRight: 24,
           }}
         >
           <Text
             style={{
               color: "white",
               fontWeight: "bold",
-              fontSize: 22,
+              fontSize: 18,
               letterSpacing: 1,
             }}
             numberOfLines={1}
@@ -59,30 +57,33 @@ export default function Index() {
           </Text>
         </View>
 
-        {/* Persegi Panjang */}
+        {/* Persegi Panjang dengan Nama */}
         <View
           style={{
-            width: 300,
+            width: 320,
             height: 100,
             backgroundColor: "#0984e3",
             borderRadius: 10,
             justifyContent: "center",
             alignItems: "center",
+            paddingHorizontal: 16,
           }}
         >
           <Text
             style={{
               color: "white",
               fontWeight: "bold",
-              fontSize: 20,
+              fontSize: 16,
               textAlign: "center",
-              width: "100%",
+              lineHeight: 20,
             }}
+            numberOfLines={2}
+            adjustsFontSizeToFit
           >
             MUH. FARREL APTA INDRATAMA
           </Text>
         </View>
       </View>
-       </View>
+    </View>
   );
-}
+} 
