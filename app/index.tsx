@@ -18,7 +18,7 @@ export default function Index() {
           gap: 24,
         }}
       >
-        {/* Segitiga dengan Border */}
+        {/* Segitiga */}
         <View
           style={{
             width: 0,
@@ -28,39 +28,26 @@ export default function Index() {
             borderBottomWidth: 80,
             borderLeftColor: "transparent",
             borderRightColor: "transparent",
-            borderBottomColor: "#333333",
+            borderBottomColor: "#e17055",
           }}
         />
 
-        {/* Pill (Tabung) dengan Label dan ID Siswa */}
+        {/* Pill (Tabung) dengan ID Siswa */}
         <View
           style={{
             width: 180,
             height: 70,
-            backgroundColor: "transparent",
-            borderWidth: 2,
-            borderColor: "#333333",
-            borderRadius: 35, // Setengah dari height untuk bentuk pill sempurna
+            backgroundColor: "#00b894",
+            borderRadius: 100,
             justifyContent: "center",
             alignItems: "center",
           }}
         >
           <Text
             style={{
-              color: "#333333",
-              fontSize: 10,
-              textAlign: "center",
-              marginBottom: 3,
-              fontWeight: "500",
-            }}
-          >
-            ID Siswa
-          </Text>
-          <Text
-            style={{
-              color: "#333333",
+              color: "white",
               fontWeight: "bold",
-              fontSize: 16,
+              fontSize: 18,
               letterSpacing: 1,
             }}
             numberOfLines={1}
@@ -70,39 +57,25 @@ export default function Index() {
           </Text>
         </View>
 
-        {/* Persegi Panjang dengan Label dan Nama */}
+        {/* Persegi Panjang dengan Nama */}
         <View
           style={{
-            width: 400,
-            height: 120,
-            backgroundColor: "transparent",
-            borderWidth: 2,
-            borderColor: "#333333",
-            borderRadius: 8,
+            width: 320,
+            height: 100,
+            backgroundColor: "#0984e3",
+            borderRadius: 10,
             justifyContent: "center",
             alignItems: "center",
-            paddingHorizontal: 24,
-            paddingVertical: 16,
+            paddingHorizontal: 16,
           }}
         >
           <Text
             style={{
-              color: "#333333",
-              fontSize: 14,
-              textAlign: "center",
-              marginBottom: 8,
-              fontWeight: "600",
-            }}
-          >
-            Nama
-          </Text>
-          <Text
-            style={{
-              color: "#333333",
+              color: "white",
               fontWeight: "bold",
-              fontSize: 20,
+              fontSize: 16,
               textAlign: "center",
-              lineHeight: 24,
+              lineHeight: 20,
             }}
             numberOfLines={2}
             adjustsFontSizeToFit
