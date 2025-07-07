@@ -67,6 +67,7 @@ export default function Index() {
             justifyContent: "center",
             alignItems: "center",
             paddingHorizontal: 16,
+            paddingVertical: 8,
           }}
         >
           <Text
@@ -75,10 +76,12 @@ export default function Index() {
               fontWeight: "bold",
               fontSize: 16,
               textAlign: "center",
-              lineHeight: 20,
+              lineHeight: 22,
+              flexWrap: "wrap",
             }}
             numberOfLines={2}
             adjustsFontSizeToFit
+            ellipsizeMode="tail"
           >
             MUH. FARREL APTA INDRATAMA
           </Text>
