@@ -32,7 +32,7 @@ export default function Index() {
           }}
         />
 
-        {/* Pill (Tabung) dengan ID Siswa */}
+        {/* Pill (Tabung) dengan Label dan ID Siswa */}
         <View
           style={{
             width: 180,
@@ -46,8 +46,19 @@ export default function Index() {
           <Text
             style={{
               color: "white",
+              fontSize: 10,
+              textAlign: "center",
+              marginBottom: 3,
+              fontWeight: "500",
+            }}
+          >
+            ID Siswa
+          </Text>
+          <Text
+            style={{
+              color: "white",
               fontWeight: "bold",
-              fontSize: 18,
+              fontSize: 16,
               letterSpacing: 1,
             }}
             numberOfLines={1}
@@ -57,7 +68,7 @@ export default function Index() {
           </Text>
         </View>
 
-        {/* Persegi Panjang dengan Nama */}
+        {/* Persegi Panjang dengan Label dan Nama */}
         <View
           style={{
             width: 380,
@@ -69,6 +80,17 @@ export default function Index() {
             paddingHorizontal: 20,
           }}
         >
+          <Text
+            style={{
+              color: "white",
+              fontSize: 12,
+              textAlign: "center",
+              marginBottom: 5,
+              fontWeight: "500",
+            }}
+          >
+            Nama
+          </Text>
           <Text
             style={{
               color: "white",
