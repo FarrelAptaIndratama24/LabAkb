@@ -38,7 +38,7 @@ export default function Index() {
             width: 180,
             height: 70,
             backgroundColor: "#00b894",
-            borderRadius: 35,
+            borderRadius: 35, // Setengah dari height untuk bentuk pill sempurna
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -60,24 +60,24 @@ export default function Index() {
         {/* Persegi Panjang dengan Nama */}
         <View
           style={{
-            width: 320,
+            width: 380,
             height: 100,
             backgroundColor: "#0984e3",
             borderRadius: 10,
             justifyContent: "center",
             alignItems: "center",
-            paddingHorizontal: 16,
+            paddingHorizontal: 20,
           }}
         >
           <Text
             style={{
               color: "white",
               fontWeight: "bold",
-              fontSize: 16,
+              fontSize: 18,
               textAlign: "center",
-              lineHeight: 20,
+              lineHeight: 22,
             }}
-            numberOfLines={2}
+            numberOfLines={1}
             adjustsFontSizeToFit
           >
             MUH. FARREL APTA INDRATAMA
@@ -86,4 +86,4 @@ export default function Index() {
       </View>
     </View>
   );
-} 
+}
