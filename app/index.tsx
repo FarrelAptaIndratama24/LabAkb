@@ -1,88 +1,85 @@
-import { Text, View } from "react-native";
+// App.tsx
+import React, { useState } from 'react';
+import { View, FlatList, Image, Pressable, StyleSheet, Dimensions } from 'react-native';
 
-export default function Index() {
+const imagePairs = [
+  { main: require('../assets/images/download.jpg'), alt: require('../assets/images/hp1.jpg') },
+  { main: require('../assets/images/download (1).jpg'), alt: require('../assets/images/hp2.jpg') },
+  { main: require('../assets/images/download (2).jpg'), alt: require('../assets/images/hp3.jpg') },
+  { main: require('../assets/images/download (3).jpg'), alt: require('../assets/images/hp4.jpg') },
+  { main: require('../assets/images/download (4).jpg'), alt: require('../assets/images/hp5.jpg') },
+  { main: require('../assets/images/download (5).jpg'), alt: require('../assets/images/hp6.jpg') },
+  { main: require('../assets/images/download (6).jpg'), alt: require('../assets/images/hp7.jpg') },
+  { main: require('../assets/images/download (7).jpg'), alt: require('../assets/images/hp8.jpg') },
+  { main: require('../assets/images/download (8).jpg'), alt: require('../assets/images/download (9).jpg') },
+];
+
+const IMAGE_SIZE = Dimensions.get('window').width / 3 - 10;
+
+export default function App() {
+  const [states, setStates] = useState(
+    imagePairs.map(() => ({
+      isAlt: false,
+      scale: 1,
+    }))
+  );
+
+  const handlePress = (index: number) => {
+    setStates(prev =>
+      prev.map((item, i) =>
+        i === index
+          ? {
+              isAlt: !item.isAlt,
+              scale: Math.min(item.scale * 1.2, 2),
+            }
+          : item
+      )
+    );
+  };
+
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center", // tengah secara horizontal
-        backgroundColor: "#f5f6fa",
-      }}
-    >
-      <View
-        style={{
-          flexDirection: "row", // objek berjejer horizontal
-          alignItems: "center",
-          justifyContent: "center",
-          gap: 24, // jarak antar objek (gunakan margin jika gap tidak didukung)
+    <View style={styles.container}>
+      <FlatList
+        data={imagePairs}
+        keyExtractor={(_, index) => index.toString()}
+        numColumns={3}
+        renderItem={({ item, index }) => {
+          const state = states[index];
+          return (
+            <Pressable onPress={() => handlePress(index)} style={styles.imageWrapper}>
+              <Image
+                source={state.isAlt ? item.alt : item.main}
+                style={[
+                  styles.image,
+                  {
+                    transform: [{ scale: state.scale }],
+                  },
+                ]}
+                resizeMode="contain"
+              />
+            </Pressable>
+          );
         }}
-      >
-        {/* Segitiga */}
-        <View
-          style={{
-            width: 0,
-            height: 0,
-            borderLeftWidth: 50,
-            borderRightWidth: 50,
-            borderBottomWidth: 80,
-            borderLeftColor: "transparent",
-            borderRightColor: "transparent",
-            borderBottomColor: "#e17055",
-            marginRight: 24,
-          }}
-        />
-
-        {/* Tabung */}
-        <View
-          style={{
-            width: 180,
-            height: 70,
-            backgroundColor: "#00b894",
-            borderRadius: 35,
-            justifyContent: "center",
-            alignItems: "center",
-            marginRight: 24,
-          }}
-        >
-          <Text
-            style={{
-              color: "white",
-              fontWeight: "bold",
-              fontSize: 22,
-              letterSpacing: 1,
-            }}
-            numberOfLines={1}
-            adjustsFontSizeToFit
-          >
-            105841109422
-          </Text>
-        </View>
-
-        {/* Persegi Panjang */}
-        <View
-          style={{
-            width: 300,
-            height: 100,
-            backgroundColor: "#0984e3",
-            borderRadius: 10,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Text
-            style={{
-              color: "white",
-              fontWeight: "bold",
-              fontSize: 20,
-              textAlign: "center",
-              width: "100%",
-            }}
-          >
-            MUH. FARREL APTA INDRATAMA
-          </Text>
-        </View>
-      </View>
-       </View>
+      />
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 5,
+    backgroundColor: '#fff',
+  },
+  imageWrapper: {
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
+    margin: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  image: {
+    width: IMAGE_SIZE - 10,
+    height: IMAGE_SIZE - 10,
+  },
+});
