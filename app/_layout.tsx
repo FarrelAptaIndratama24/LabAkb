@@ -1,31 +1,34 @@
-import { useFonts } from 'expo-font';
-import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
-import { Slot } from 'expo-router';
-
-SplashScreen.preventAutoHideAsync();
+import { Stack, Slot, useRouter } from 'expo-router';
+import { View, Text, TouchableOpacity } from 'react-native';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 export default function RootLayout() {
-  const [fontsLoaded] = useFonts({
-    'BitcountGridSingle': require('../assets/fonts/BitcountGridSingle-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf'),
-    'FascinateInline-Regular': require('../assets/fonts/FascinateInline-Regular.ttf'),
-    'Inter': require('../assets/fonts/Inter-VariableFont_opsz,wght.ttf'),
-    'Lato-Regular': require('../assets/fonts/Lato-Regular.ttf'),
-    'MonsieurLaDoulaise': require('../assets/fonts/MonsieurLaDoulaise-Regular.ttf'),
-    'OpenSans': require('../assets/fonts/OpenSans-VariableFont_wdth,wght.ttf'),
-    'PassionsConflict': require('../assets/fonts/PassionsConflict-Regular.ttf'),
-    'Roboto': require('../assets/fonts/Roboto-VariableFont_wdth,wght.ttf'),
-    'Rubik': require('../assets/fonts/Rubik-VariableFont_wght.ttf'),
-    'UnifrakturMaguntia': require('../assets/fonts/UnifrakturMaguntia-Regular.ttf'),
-  });
+  // const router = useRouter();
 
-  useEffect(() => {
-    if (fontsLoaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [fontsLoaded]);
+  // return (
+  //   <Stack
+  //     // screenOptions={{
+  //     //   header: ({ navigation }) => (
+  //     //     <View style={{ flexDirection: 'row', alignItems: 'center', padding: 16, backgroundColor: '#f5f5f5' }}>
+  //     //       <TouchableOpacity onPress={() => navigation.navigate('/')} style={{ marginRight: 12 }}>
+  //     //         <FontAwesome name="home" size={28} color="#333" />
+  //     //       </TouchableOpacity>
+  //     //       <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Home</Text>
+  //     //     </View>
+  //     //   ),
+  //     // }}
+  //   >
+  //     {/* <Slot /> */}
+  //   </Stack>
+  // );
+return (
+    <Stack
+      screenOptions={{
+        headerShown: false, // pastikan ini di Stack utama
+      }}
+    >
+      <Stack.Screen name="(Tabs)" />
+    </Stack>
+  );
 
-  if (!fontsLoaded) return null;
-
-  return <Slot />;
 }
